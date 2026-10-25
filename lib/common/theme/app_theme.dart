@@ -23,7 +23,7 @@ abstract final class AppTheme {
         elevation: 0,
         scrolledUnderElevation: 1,
       ),
-      cardTheme: CardTheme(
+      cardTheme: CardThemeData(
         color: colorScheme.surfaceContainerHighest,
         elevation: 0,
         shape: RoundedRectangleBorder(
@@ -56,7 +56,7 @@ abstract final class AppTheme {
         elevation: 0,
         scrolledUnderElevation: 1,
       ),
-      cardTheme: CardTheme(
+      cardTheme: CardThemeData(
         color: colorScheme.surfaceContainerHighest,
         elevation: 0,
         shape: RoundedRectangleBorder(
