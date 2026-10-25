@@ -16,8 +16,8 @@
 Репозиторий зарегистрирован через `RepositoryProvider<IModRepository>`.
 
 ## Скриншоты
-![Экран 1](docs/1.jpg)
-![Экран 2](docs/2.jpg)
-![Экран 3](docs/3.jpg)
-![Экран 4](docs/4.jpg)
-![Экран 5](docs/5.jpg)
+![Экран 1](https://raw.githubusercontent.com/dekrill/minecraftModListFlutter/feature/lab-2_frame/docs/1.jpg)
+![Экран 2](https://raw.githubusercontent.com/dekrill/minecraftModListFlutter/feature/lab-2_frame/docs/2.jpg)
+![Экран 3](https://raw.githubusercontent.com/dekrill/minecraftModListFlutter/feature/lab-2_frame/docs/3.jpg)
+![Экран 4](https://raw.githubusercontent.com/dekrill/minecraftModListFlutter/feature/lab-2_frame/docs/4.jpg)
+![Экран 5](https://raw.githubusercontent.com/dekrill/minecraftModListFlutter/feature/lab-2_frame/docs/5.jpg)
