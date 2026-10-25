@@ -1,0 +1,38 @@
+{
+  "@@locale": "ru",
+  "appTitle": "Моды Minecraft",
+  "@appTitle": {
+    "description": "Заголовок в шапке и во вкладке браузера"
+  },
+  "searchPlaceholder": "Поиск по названию...",
+  "noModsFound": "Ничего не найдено",
+  "noModsFoundHint": "Попробуйте изменить поисковый запрос",
+  "downloadsLabel": "Загрузки",
+  "followersLabel": "Подписчики",
+  "supportedLoaders": "Поддерживаемые загрузчики",
+  "gameVersions": "Версии игры",
+  "dependencies": "Зависимости",
+  "about": "О моде",
+  "modNotFound": "Мод не найден",
+  "actionBack": "Назад",
+  "themeToggle": "Сменить тему",
+  "languageToggle": "Сменить язык",
+  "loading": "Загрузка...",
+  "retry": "Повторить",
+  "authorPrefix": "Автор: {author}",
+  "@authorPrefix": {
+    "placeholders": {
+      "author": {
+        "type": "String"
+      }
+    }
+  },
+  "modsCount": "{count, plural, one{{count} мод} few{{count} мода} other{{count} модов}}",
+  "@modsCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  }
+}

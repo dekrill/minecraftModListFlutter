@@ -1,0 +1,23 @@
+## Что сделано
+
+**Домен:** каталог модов Minecraft (Modrinth). Данные — 21 мод из моков, поля: id, slug, название, краткое описание, подробное описание, автор, иконка, загрузки, подписчики, поддерживаемые загрузчики (loaders), версии игры (game versions), связанные зависимости (dependencies).
+
+**Экраны:**
+- Список: карточки с иконкой, названием, автором, кратким описанием, количеством загрузок и тегами поддерживаемых загрузчиков; поиск по названию, описанию и автору; экран «ничего не найдено».
+- Деталь `/mod/:id`: подробная информация о моде, статистика (загрузки, подписчики), списки поддерживаемых загрузчиков и версий игры, связанные зависимости (открываются через `push`, «назад» возвращает по одному экрану).
+- Переключение светлой/тёмной темы и языка RU/EN в шапке.
+- Вёрстка ограничена по ширине в широком окне (`maxWidth: 840`) и не ломается в узком.
+
+**State manager:** `flutter_bloc`, Cubit с sealed-состояниями.
+- `ModListCubit` в корне приложения — список, запрос и результат поиска сохраняются при переходе на деталь и обратно.
+- `ModDetailCubit` создаёт экран детали — у каждого открытого экрана свой Cubit.
+- `ThemeCubit` и `LocaleCubit` в корне приложения.
+
+Репозиторий зарегистрирован через `RepositoryProvider<IModRepository>`.
+
+## Скриншоты
+![Экран 1](https://raw.githubusercontent.com/dekrill/minecraftModListFlutter/feature/lab-2_frame/docs/1.jpg)
+![Экран 2](https://raw.githubusercontent.com/dekrill/minecraftModListFlutter/feature/lab-2_frame/docs/2.jpg)
+![Экран 3](https://raw.githubusercontent.com/dekrill/minecraftModListFlutter/feature/lab-2_frame/docs/3.jpg)
+![Экран 4](https://raw.githubusercontent.com/dekrill/minecraftModListFlutter/feature/lab-2_frame/docs/4.jpg)
+![Экран 5](https://raw.githubusercontent.com/dekrill/minecraftModListFlutter/feature/lab-2_frame/docs/5.jpg)
