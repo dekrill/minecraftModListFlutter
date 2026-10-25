@@ -107,86 +107,92 @@ class _ModDetailView extends StatelessWidget {
                   ),
                 ),
               ),
-              body: SingleChildScrollView(
-                padding: const EdgeInsets.all(16),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    _buildHeader(context, theme, mod),
-                    const SizedBox(height: 16),
-                    _buildStatsCard(context, theme, mod, l10n),
-                    const SizedBox(height: 20),
-                    _buildSectionTitle(theme, l10n.supportedLoaders),
-                    const SizedBox(height: 8),
-                    Wrap(
-                      spacing: 8,
-                      runSpacing: 8,
+              body: Center(
+                child: ConstrainedBox(
+                  constraints: const BoxConstraints(maxWidth: 840),
+                  child: SingleChildScrollView(
+                    padding: const EdgeInsets.all(16),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        for (final loader in mod.loaders)
-                          LoaderChip(loader: loader),
-                      ],
-                    ),
-                    const SizedBox(height: 20),
-                    _buildSectionTitle(theme, l10n.gameVersions),
-                    const SizedBox(height: 8),
-                    Wrap(
-                      spacing: 8,
-                      runSpacing: 8,
-                      children: [
-                        for (final version in mod.gameVersions)
-                          Container(
-                            padding: const EdgeInsets.symmetric(
-                              horizontal: 10,
-                              vertical: 4,
-                            ),
-                            decoration: BoxDecoration(
-                              color: colorScheme.surfaceContainerHighest,
-                              borderRadius: BorderRadius.circular(6),
-                            ),
-                            child: Text(
-                              version,
-                              style: theme.textTheme.labelMedium?.copyWith(
-                                color: colorScheme.onSurfaceVariant,
-                                fontWeight: FontWeight.w500,
+                        _buildHeader(context, theme, mod),
+                        const SizedBox(height: 16),
+                        _buildStatsCard(context, theme, mod, l10n),
+                        const SizedBox(height: 20),
+                        _buildSectionTitle(theme, l10n.supportedLoaders),
+                        const SizedBox(height: 8),
+                        Wrap(
+                          spacing: 8,
+                          runSpacing: 8,
+                          children: [
+                            for (final loader in mod.loaders)
+                              LoaderChip(loader: loader),
+                          ],
+                        ),
+                        const SizedBox(height: 20),
+                        _buildSectionTitle(theme, l10n.gameVersions),
+                        const SizedBox(height: 8),
+                        Wrap(
+                          spacing: 8,
+                          runSpacing: 8,
+                          children: [
+                            for (final version in mod.gameVersions)
+                              Container(
+                                padding: const EdgeInsets.symmetric(
+                                  horizontal: 10,
+                                  vertical: 4,
+                                ),
+                                decoration: BoxDecoration(
+                                  color: colorScheme.surfaceContainerHighest,
+                                  borderRadius: BorderRadius.circular(6),
+                                ),
+                                child: Text(
+                                  version,
+                                  style: theme.textTheme.labelMedium?.copyWith(
+                                    color: colorScheme.onSurfaceVariant,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
                               ),
-                            ),
+                          ],
+                        ),
+                        if (mod.dependencies.isNotEmpty) ...[
+                          const SizedBox(height: 20),
+                          _buildSectionTitle(theme, l10n.dependencies),
+                          const SizedBox(height: 8),
+                          Wrap(
+                            spacing: 8,
+                            runSpacing: 8,
+                            children: [
+                              for (final dep in mod.dependencies)
+                                ActionChip(
+                                  avatar: const Icon(
+                                    Icons.link_rounded,
+                                    size: 16,
+                                  ),
+                                  label: Text(dep.name),
+                                  onPressed: () =>
+                                      context.push('/mod/${dep.id}'),
+                                ),
+                            ],
                           ),
+                        ],
+                        const SizedBox(height: 24),
+                        const Divider(),
+                        const SizedBox(height: 16),
+                        _buildSectionTitle(theme, l10n.about),
+                        const SizedBox(height: 8),
+                        Text(
+                          mod.body,
+                          style: theme.textTheme.bodyLarge?.copyWith(
+                            color: colorScheme.onSurfaceVariant,
+                            height: 1.5,
+                          ),
+                        ),
+                        const SizedBox(height: 32),
                       ],
                     ),
-                    if (mod.dependencies.isNotEmpty) ...[
-                      const SizedBox(height: 20),
-                      _buildSectionTitle(theme, l10n.dependencies),
-                      const SizedBox(height: 8),
-                      Wrap(
-                        spacing: 8,
-                        runSpacing: 8,
-                        children: [
-                          for (final dep in mod.dependencies)
-                            ActionChip(
-                              avatar: const Icon(
-                                Icons.link_rounded,
-                                size: 16,
-                              ),
-                              label: Text(dep.name),
-                              onPressed: () => context.push('/mod/${dep.id}'),
-                            ),
-                        ],
-                      ),
-                    ],
-                    const SizedBox(height: 24),
-                    const Divider(),
-                    const SizedBox(height: 16),
-                    _buildSectionTitle(theme, l10n.about),
-                    const SizedBox(height: 8),
-                    Text(
-                      mod.body,
-                      style: theme.textTheme.bodyLarge?.copyWith(
-                        color: colorScheme.onSurfaceVariant,
-                        height: 1.5,
-                      ),
-                    ),
-                    const SizedBox(height: 32),
-                  ],
+                  ),
                 ),
               ),
             ),
