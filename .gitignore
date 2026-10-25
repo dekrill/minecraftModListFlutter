@@ -46,3 +46,6 @@ app.*.map.json
 
 # Widget Preview related
 .widget_preview/
+
+# Код gen_l10n генерируется из ARB при pub get / run / build
+/lib/l10n/app_localizations*.dart

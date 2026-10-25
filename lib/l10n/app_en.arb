@@ -1,0 +1,38 @@
+{
+  "@@locale": "en",
+  "appTitle": "Minecraft Mods",
+  "@appTitle": {
+    "description": "App title in app bar and browser tab"
+  },
+  "searchPlaceholder": "Search by name...",
+  "noModsFound": "Nothing found",
+  "noModsFoundHint": "Try changing the search query",
+  "downloadsLabel": "Downloads",
+  "followersLabel": "Followers",
+  "supportedLoaders": "Supported Loaders",
+  "gameVersions": "Game Versions",
+  "dependencies": "Dependencies",
+  "about": "About",
+  "modNotFound": "Mod not found",
+  "actionBack": "Back",
+  "themeToggle": "Toggle theme",
+  "languageToggle": "Change language",
+  "loading": "Loading...",
+  "retry": "Retry",
+  "authorPrefix": "Author: {author}",
+  "@authorPrefix": {
+    "placeholders": {
+      "author": {
+        "type": "String"
+      }
+    }
+  },
+  "modsCount": "{count, plural, one{{count} mod} other{{count} mods}}",
+  "@modsCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  }
+}
